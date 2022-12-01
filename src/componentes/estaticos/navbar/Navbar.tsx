@@ -4,31 +4,37 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, Search } from "react-router-dom";
 import "./Navbar.css";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import Sacola from "./sacola.png";
-
 import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
 import SearchIcon from '@mui/icons-material/Search';
 
 function Navbar() {
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className="appbar">
         <Toolbar variant="dense" className="bar">
+
+         <Box>
+         <div className="menuicons">
+            <div className="menuicon"></div>
+            <div className="menuicon"></div>
+            <div className="menuicon"></div>
+         </div>
+         </Box>
+
           <Box className="logo">
-            <Typography variant="h5" color="inherit">
+            <Typography className="text-logo" variant="h5" color="inherit">
               GreenShop
               <div className="barrinha"></div>
             </Typography>
           </Box>
 
           <Box className="menu-right" display="flex">
+
             <Box className="pesquisa">
               <FormControl variant="standard" color='success' >
                 <Input
@@ -70,7 +76,12 @@ function Navbar() {
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
-            
+        <a href="#">produtos</a>
+        <a href="#">categorias</a>
+        <a href="#">promoções</a>
+        <a href="#">móveis</a>
+        <a href="#">decoração</a>
+        <a href="#">blog</a>
         </Toolbar>
       </AppBar>
     </>

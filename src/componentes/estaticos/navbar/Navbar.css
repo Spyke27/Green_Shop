@@ -4,14 +4,19 @@
     background-color: white;
     padding: 8px;
     align-items: center;
+    padding: 10px !important;
 }
 .logo{
     color: #333;
     font-family: sans-serif;
     font-weight: bold;
+    margin-left: 120px;
+}
+.text-logo{
+    font-size: 40px !important;
 }
 .barrinha{
-    width: 83px;
+    width: 150px;
     height: 3px;
     background-color: #00A470;
     margin-top: -5px;
@@ -19,6 +24,7 @@
 .menu-right{
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 .perfil{
     background-color: #00A470 !important;
@@ -40,6 +46,7 @@
     width: 200px;
     margin-right: 10px;
     border-radius: 3px;
+    border: #00A470 solid .5px;
 }
 .lupa{
     margin-left: 8px;
@@ -47,4 +54,33 @@
 .bar2{
     background-color: #00A470;
     min-height: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar2 a{
+    text-transform: uppercase;
+    color: #e3e3e3 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    margin-right: 20px;
+    border-bottom: 2px solid #00A470;
+}
+.bar2 a:hover{
+    color: #fff !important;
+    border-bottom: 2px solid #fff;
+}
+.menuicons{
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 3px;
+    margin-left: 20px !important;
+    cursor: pointer;
+}
+.menuicon{
+    width: 30px !important;
+    height: 4px !important;
+    background-color: #222 !important;
+    margin-bottom: 5px;
+
 }
