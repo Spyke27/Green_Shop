@@ -34,7 +34,6 @@ function Navbar() {
           </Box>
 
           <Box className="menu-right" display="flex">
-
             <Box className="pesquisa">
               <FormControl variant="standard" color='success' >
                 <Input
@@ -70,9 +69,14 @@ function Navbar() {
                 )}
               </PopupState>
             </Box>
+
             <Box className="sacola">
+              <div className="sacolaa">
               <img src={Sacola} alt="" />
+              <div className="qtd">5</div>
+              </div>              
             </Box>
+
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
