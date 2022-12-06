@@ -22,6 +22,14 @@
 }
 
 .linkStyle {
-    color: #4CAF50;
+    color: #00a470;
     text-decoration: none;
+}
+.btnLogin{
+    background-color: #00a470 !important;
+    color: #e3e3e3 !important;
+}
+.btnLogin:hover{
+    background-color: #008f62 !important;
+    color: #e3e3e3 !important;
 }

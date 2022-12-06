@@ -11,8 +11,19 @@ import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import SearchIcon from '@mui/icons-material/Search';
+import { Link, useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
+  
+  const [token, setToken] = useLocalStorage('token');
+  const navigate = useNavigate()
+
+  function goLogout(){
+    setToken('');
+    navigate('/login')
+  }
+
   return (
     <>
       <AppBar position="static" className="appbar">
@@ -60,10 +71,12 @@ function Navbar() {
                     </Button>
                     <Menu {...bindMenu(popupState)}>
                       <MenuItem onClick={popupState.close}>Perfil</MenuItem>
-                      <MenuItem onClick={popupState.close}>
-                        Meus Pedidos
-                      </MenuItem>
-                      <MenuItem onClick={popupState.close}>Logout</MenuItem>
+                      <MenuItem onClick={popupState.close}>Meus Pedidos</MenuItem>
+                      <Box onClick={goLogout}>
+                        <MenuItem onClick={popupState.close}>
+                          Logout
+                        </MenuItem>
+                      </Box>
                     </Menu>
                   </React.Fragment>
                 )}
@@ -80,12 +93,12 @@ function Navbar() {
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
-        <a href="#">produtos</a>
+        <Link to='/produtos'>produtos</Link>
         <a href="#">categorias</a>
         <a href="#">promoções</a>
         <a href="#">móveis</a>
         <a href="#">decoração</a>
-        <a href="#">blog</a>
+        <Link to='/sobrenos'>sobre nos</Link>
         </Toolbar>
       </AppBar>
     </>

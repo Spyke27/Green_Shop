@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.cardProduto{
+    margin: 20px;
+    width: 300px;
+    height: 400px;
+}
+.fotoCard{
+    width: 100%;
+    height: 200px;
+}
+.cardCategoria{
+    font-size: 12px !important;
+    color: #555;
+    margin-bottom: 10px !important;
+}
+.btnCarrinho{
+    background-color: #dbdb2a !important;
+    padding: 5px 10px !important;
+    color: #fff !important;
+}
+.btnCarrinho:hover{
+    background-color: #c7c71b !important;
+    transform: scale(1.05);
+    transition: ease-in-out .3s;
+}
+.btnCarrinho img{
+    width: 23px;
+    height:20px;
+    margin-left: 5px;
+}
+.btnComprar{
+    background-color: #04e710 !important;
+    padding: 5px 10px !important;
+    color: #fff !important;
+}
+.btnComprar:hover{
+    background-color: #3bff45 !important;
+    transform: scale(1.05);
+    transition: ease-in-out .3s;
+}

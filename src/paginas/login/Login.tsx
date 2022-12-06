@@ -1,41 +1,89 @@
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
-import "./login.css";
+import React, { ChangeEvent, useState, useEffect } from "react";
+import useLocalStorage from 'react-use-localstorage';
+import { Link, useNavigate } from 'react-router-dom';
+import UserLogin from "../../model/UserLogin";
+import "./Login.css";
+import { login } from "../../services/Service";
+
 function Login() {
+
+  
+  let navigate = useNavigate();
+  const [token, setToken] = useLocalStorage('token');
+  const [userLogin, setUserLogin] = useState<UserLogin>(
+      {
+        usuario: '',
+        senha: ''
+      }
+      )
+
+      function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+          setUserLogin({
+              ...userLogin,
+              [e.target.name]: e.target.value
+          })
+      }
+
+          useEffect(()=>{
+              if(token != ''){
+                  navigate('/home')
+              }
+          }, [token])
+
+      async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+          e.preventDefault();
+          try{
+              await login(`/auth/logar`, userLogin, setToken)
+          }catch(error){
+              alert('Usuario não encontrado!');
+          }
+      }
+
+  
   return (
     <>
       <Grid container justifyContent="center" alignContent="center" className="fullScreen">
-        <Grid sm={6} item  className="loginStyle">
+        <Grid sm={6} item className="loginStyle">
           <Typography variant="h3" align="center">Entrar</Typography>
-          <form>
+          <form onSubmit={onSubmit}>
+
             <TextField
               variant="outlined"
               label="Usuário"
               fullWidth
               margin="normal"
-            >
+              id="usuario"
+              name='usuario'
+              value={userLogin.usuario}
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+             >
             </TextField>
+          
             <TextField
+
               variant="outlined"
-              label="Password"
+              label="Senha"
               fullWidth
               margin="normal"
-              
+              id="Senha"
+              name='senha'
+              type='password'
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+
             >
             </TextField>
+
             <Box textAlign="center">
-              <Link to='/' className="text-decorator-none">
-                <Button variant="outlined" >Login</Button>
-              </Link>
+              <Button variant="contained" type="submit" className="btnLogin">Enviar</Button>
             </Box>
           </form>
           <Box className="flex">
-            <Typography>Não tem cadastro ?</Typography>
+            <Typography>Não tem cadastro?</Typography>
             <Link to='/cadastro' className="linkStyle">
-            <Typography>Cadastre-se !</Typography>
+              <Typography>Cadastre-se</Typography>
             </Link>
           </Box>
         </Grid>

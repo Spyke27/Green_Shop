@@ -95,5 +95,8 @@
     height: 4px !important;
     background-color: #222 !important;
     margin-bottom: 5px;
-
+}
+.decoration-none{
+    text-decoration: none !important;
+    color: #222;
 }
