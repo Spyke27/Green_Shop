@@ -47,7 +47,7 @@ function SobreNos() {
 
     <Box className="boxPerfil">
 
-    <Card sx={{ maxWidth: 345 }} className="card">
+    <Card sx={{ maxWidth: 345 }} className="card2">
       <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
       <CardContent>
         <Typography variant="h5" component="div">Amanda Torres</Typography>

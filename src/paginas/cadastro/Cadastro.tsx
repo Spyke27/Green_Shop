@@ -59,8 +59,9 @@ function CadastroUsuario() {
   }catch(error){
       alert('Dados incorretos!')
   }
+}
 
-  }
+
   return (
     <>
      <Grid container direction="row" justifyContent="center" alignContent="center">

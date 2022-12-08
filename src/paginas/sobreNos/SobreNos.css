@@ -26,7 +26,7 @@
     width: 600px;
     height: auto;
 }
-.card{
+.card2{
     margin: 20px;
     width: 200px;
     height: 250px;
@@ -43,18 +43,18 @@
 }
 
 .btnGithub{
-    background-color: #00a470;
-    color: #fff;
+    background-color: #00a470 !important;
+    color: #fff !important;
 }
 .btnGithub:hover{
-    background-color: #222;
+    background-color: #222 !important;
 }
 .btnLinkedin{
-    background-color: #00a470;
-    color: #fff;
+    background-color: #00a470 !important;
+    color: #fff !important;
 }
 .btnLinkedin:hover{
-    background-color: #222;
+    background-color: #222 !important;
 }
 
 .desenvolvedores{
