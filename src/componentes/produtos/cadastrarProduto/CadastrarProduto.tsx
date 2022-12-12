@@ -112,42 +112,30 @@ function CadastroProduto() {
     return (
         <>
         <Grid container direction='row' justifyContent='center' alignItems='center'>
-                    <Grid item xs={6} className='imagem2'></Grid>
-                    <Grid item xs={6} alignItems='center'>
+                    <Grid item xs={6} alignItems='center' className='container'>
                         <Box paddingX={10}>
                             <form onSubmit={onSubmit}>
                                 <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar Produtos</Typography>
 
 
-                                <TextField value={produto.categoria} onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                    updatedProduto(e)} id='categoria' label='categoria' variant='outlined' name='categoria' margin='normal' fullWidth />
+                                {/* <TextField value={produto.categoria} onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                    updatedProduto(e)} id='categoria' label='categoria' variant='outlined' name='categoria' margin='normal' fullWidth /> */}
 
                                 <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
 
-                                <TextField value={produto.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                               {/*  <TextField value={produto.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal' fullWidth /> */}
 
                                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id='descricao' label='descricao' variant='outlined' name='descricao' margin='normal' fullWidth />
 
                                 <TextField value={produto.peso} onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                     updatedProduto(e)} id='peso' label='peso' variant='outlined' name='peso' margin='normal' fullWidth />
 
+                                <TextField value={produto.peso} onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                    updatedProduto(e)} id='valor' label='valor' variant='outlined' name='valor' margin='normal' fullWidth />
+
 
                                 <TextField value={produto.foto} onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                     updatedProduto(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
-
-
-
-
-                                <Box marginTop={2} textAlign='center'>
-                                    <Link to='/login' className='text-decorator-none'>
-                                        <Button variant='contained' color='secondary' className='btnCancelar'>
-                                            Cancelar
-                                        </Button>
-                                    </Link>
-                                    <Button type='submit' variant='contained' color='primary'>
-                                        Cadastrar
-                                    </Button>
-                                </Box>
 
                                 <Select
                                     labelId="demo-simple-select-helper-label"
@@ -163,6 +151,20 @@ function CadastroProduto() {
                                         ))
                                     }
                                 </Select>
+
+
+                                <Box marginTop={2} textAlign='center'>
+                                    <Link to='/login' className='text-decorator-none'>
+                                        <Button variant='contained' color='secondary' className='btnCancelar'>
+                                            Cancelar
+                                        </Button>
+                                    </Link>
+                                    <Button type='submit' variant='contained' color='primary'>
+                                        Cadastrar
+                                    </Button>
+                                </Box>
+
+                             
 
 
 
