@@ -224,7 +224,7 @@ function CadastroProduto() {
              
 
               <Box marginTop={2} textAlign="center">
-                <Link to="/home" className="text-decorator-none">
+                <Link to="/produtos" className="text-decorator-none">
                   <Button
                     variant="contained"
                     color="secondary"

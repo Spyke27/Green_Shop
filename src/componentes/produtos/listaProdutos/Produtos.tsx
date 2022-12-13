@@ -80,6 +80,32 @@ function ListarProdutos() {
                 <Button size="small" className="btnCarrinho">
                   Adicionar <img src={Cart} alt="" />
                 </Button>
+
+
+                <Box className="btnCard" mb={1.5}>
+                <Link
+                  to={`/produtos/cadastrar/${produto.id_produto}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" className="btnAtualizar marginLeft" size="small">
+                      atualizar
+                    </Button>
+                  </Box>
+                </Link>
+                <Link
+                  to={`/produtos/deletar/${produto.id_produto}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" size="small" className="btnDeletar">
+                      deletar
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+
+
               </CardActions>
             </Card>
         ))}
