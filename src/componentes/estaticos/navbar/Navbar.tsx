@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,32 +10,34 @@ import Sacola from "./sacola.png";
 import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import FadeMenu from "./drop/MenuDrop";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../../store/tokens/action";
 
 function Navbar() {
-  
-  const [token, setToken] = useLocalStorage('token');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [token, setToken] = useState("");
+  const dispatch = useDispatch();
 
-  function goLogout(){
-    setToken('');
-    navigate('/login')
+  function goLogout() {
+    setToken("");
+    dispatch(addToken(token));
+    navigate("/login");
   }
 
   return (
     <>
       <AppBar position="static" className="appbar">
         <Toolbar variant="dense" className="bar">
-
-         <Box>
-         <div className="menuicons">
-            <div className="menuicon"></div>
-            <div className="menuicon"></div>
-            <div className="menuicon"></div>
-         </div>
-         </Box>
+          <Box>
+            <div className="menuicons">
+              <div className="menuicon"></div>
+              <div className="menuicon"></div>
+              <div className="menuicon"></div>
+            </div>
+          </Box>
 
           <Box className="logo">
             <Typography className="text-logo" variant="h5" color="inherit">
@@ -46,12 +48,12 @@ function Navbar() {
 
           <Box className="menu-right" display="flex">
             <Box className="pesquisa">
-              <FormControl variant="standard" color='success' >
+              <FormControl variant="standard" color="success">
                 <Input
-                placeholder="Buscar Produtos"
+                  placeholder="Buscar Produtos"
                   startAdornment={
                     <InputAdornment position="start">
-                      <SearchIcon className="lupa"/>
+                      <SearchIcon className="lupa" />
                     </InputAdornment>
                   }
                 />
@@ -71,11 +73,11 @@ function Navbar() {
                     </Button>
                     <Menu {...bindMenu(popupState)}>
                       <MenuItem onClick={popupState.close}>Perfil</MenuItem>
-                      <MenuItem onClick={popupState.close}>Meus Pedidos</MenuItem>
+                      <MenuItem onClick={popupState.close}>
+                        Meus Pedidos
+                      </MenuItem>
                       <Box onClick={goLogout}>
-                        <MenuItem onClick={popupState.close}>
-                          Logout
-                        </MenuItem>
+                        <MenuItem onClick={popupState.close}>Logout</MenuItem>
                       </Box>
                     </Menu>
                   </React.Fragment>
@@ -85,20 +87,19 @@ function Navbar() {
 
             <Box className="sacola">
               <div className="sacolaa">
-              <img src={Sacola} alt="" />
-              <div className="qtd">5</div>
-              </div>              
+                <img src={Sacola} alt="" />
+                <div className="qtd">5</div>
+              </div>
             </Box>
-
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
-        <Link to='/produtos'>produtos</Link>
-        <a href="#">categorias</a>
-        <a href="#">promoções</a>
-        <a href="#">móveis</a>
-        <a href="#">decoração</a>
-        <Link to='/sobrenos'>sobre nos</Link>
+          <Link to="/produtos">produtos</Link>
+          <FadeMenu />
+          <a href="#">promoções</a>
+          <a href="#">móveis</a>
+          <a href="#">decoração</a>
+          <Link to="/sobrenos">sobre nos</Link>
         </Toolbar>
       </AppBar>
     </>

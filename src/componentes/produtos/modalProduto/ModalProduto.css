@@ -1,0 +1,12 @@
+.cursor{
+    cursor: pointer;
+}
+.btnModal{
+    border: none !important;
+    color: white!important;
+    background-color: #306E67 !important;
+    padding: 5px 10px !important;
+}
+.btnModal:hover{
+    background-color: #52938c !important;
+}

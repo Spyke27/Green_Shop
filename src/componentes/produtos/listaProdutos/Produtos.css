@@ -5,6 +5,10 @@
     flex-direction: row;
     padding: 20px;
 }
+.btnAdicionarProduto{
+    background-color: #00a470 !important;
+    margin-top: 20px;
+}
 .cardProduto{
     width: 260px;
     height: 350px;
