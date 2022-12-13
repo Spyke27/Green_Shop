@@ -11,6 +11,7 @@ import {
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
 import Mesa from "./mesa.jpg";
+import Mais from "./mais.svg";
 import Cart from "./cart.svg";
 import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
@@ -51,7 +52,7 @@ function ListarProdutos() {
           color="secondary"
           className="btnAdicionarProduto"
         >
-          Novo Produto
+          <img src={Mais}/>
         </Button>
       </Link>
       <Box className="container">

@@ -10,7 +10,10 @@
 }
 .btnAdicionarProduto{
     background-color: #00a470 !important;
-    margin-top: 20px;
+    border-radius: 50% !important;
+    padding: 10px !important;
+    position: fixed !important;
+    z-index: 99;
 }
 .cardProduto{
     width: 260px;
