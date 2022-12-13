@@ -95,14 +95,14 @@ function CadastroProduto() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/produtos`, produto, setProduto, {
+      put(`/produtos/atualizar`, produto, setProduto, {
         headers: {
           Authorization: token,
         },
       });
       alert("Produto atualizado com sucesso!");
     } else {
-      post(`/produtos/`, produto, setProduto, {
+      post(`/produtos/cadastrar`, produto, setProduto, {
         headers: {
           Authorization: token,
         },
@@ -147,6 +147,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="nome"
                 margin="normal"
+                inputProps={{ maxLength: 15 }}
                 fullWidth
               />
 
@@ -160,6 +161,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="descricao"
                 margin="normal"
+                inputProps={{ maxLength: 20 }}
                 fullWidth
               />
 
