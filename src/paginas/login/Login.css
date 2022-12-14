@@ -4,13 +4,14 @@
 
 .fullScreen {
     height: 100vh;
+    padding-right: 70px;
+    background-color: #008f62;
 }
-
 .loginStyle {
-    border-style: solid;
-    border-radius: 1rem;
-    border-width: 0.3px;
+    border-radius: 3px;
+    border: none !important;
     padding: 4rem;
+    background-color: #fff;
 }
 
 .flex {
@@ -28,8 +29,24 @@
 .btnLogin{
     background-color: #00a470 !important;
     color: #e3e3e3 !important;
+    margin-top: 20px !important;
+    width: 100%;
+    padding: 12px 0px !important;
 }
 .btnLogin:hover{
     background-color: #008f62 !important;
     color: #e3e3e3 !important;
+}
+.ou{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+}
+.ou .tracinho{
+    height: 1.5px !important;
+    margin: 5px;
+    width: 100% !important;
+    background-color: #ccc !important;
 }

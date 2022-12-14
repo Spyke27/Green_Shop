@@ -38,6 +38,7 @@
     font-size: 12px !important;
     color: #555;
     margin-bottom: 10px !important;
+    display: flex;
 }
 .btnCarrinho{
     background-color: #dbdb2a !important;

@@ -64,7 +64,7 @@ function CadastroUsuario() {
 
   return (
     <>
-     <Grid container direction="row" justifyContent="center" alignContent="center">
+     <Grid container direction="row" justifyContent="center" alignContent="center" className="containerCadastro">
         <Grid sm={6} item  className="cadastroStyle">
           <Typography variant="h3" align="center">Cadastre-se</Typography>
           <form onSubmit={onSubmit}>
@@ -125,7 +125,15 @@ function CadastroUsuario() {
                 Cadastrar
               </Button>
               </Link>
+              <div className="ou"><span className="tracinho"></span>OU<span className="tracinho"></span></div>
+          <Box className="flex">
+            <Typography>Já tem cadastro?</Typography>
+            <Link to='/login' className="linkStyle">
+              <Typography>Entrar</Typography>
+            </Link>
+          </Box>
             </Box>
+            
           </form>
         </Grid>
         <Grid sm={6} item>

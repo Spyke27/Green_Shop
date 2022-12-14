@@ -48,6 +48,7 @@ function Login() {
   return (
     <>
       <Grid container justifyContent="center" alignContent="center" className="fullScreen">
+        <Grid sm={6} item className="loginStyle2"></Grid>
         <Grid sm={6} item className="loginStyle">
           <Typography variant="h3" align="center">Entrar</Typography>
           <form onSubmit={onSubmit}>
@@ -79,8 +80,9 @@ function Login() {
             </TextField>
 
             <Box textAlign="center">
-              <Button variant="contained" type="submit" className="btnLogin">Enviar</Button>
+              <Button variant="contained" type="submit" className="btnLogin">Login</Button>
             </Box>
+            <div className="ou"><span className="tracinho"></span>OU<span className="tracinho"></span></div>
           </form>
           <Box className="flex">
             <Typography>Não tem cadastro?</Typography>
