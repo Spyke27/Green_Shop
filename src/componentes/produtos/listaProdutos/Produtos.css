@@ -11,8 +11,10 @@
 .btnAdicionarProduto{
     background-color: #00a470 !important;
     border-radius: 50% !important;
-    padding: 10px !important;
+    padding: 7px !important;
     position: fixed !important;
+    bottom: 5%;
+    right: 5%;
     z-index: 99;
 }
 .cardProduto{
@@ -21,6 +23,7 @@
     padding: 7px;
     margin-right: 20px;
     margin-top: 20px;
+    position: relative;
 }
 .cardProduto:hover{
     background-color: #f2f2f2 !important;
@@ -64,4 +67,19 @@
     background-color: #3bff45 !important;
     transform: scale(1.05);
     transition: ease-in-out .3s;
+}
+.btnOptions{
+    display: flex;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+.btnOptions img{
+    width: 18px;
+    height: 18px;
+    background-color: blue;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 3px;
 }

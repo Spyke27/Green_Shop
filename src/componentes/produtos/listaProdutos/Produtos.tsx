@@ -10,9 +10,11 @@ import {
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
-import Mesa from "./mesa.jpg";
 import Mais from "./mais.svg";
+import Dots from "./dots.svg";
 import Cart from "./cart.svg";
+import Edit from "./edit.svg";
+import Delete from "./delete.svg";
 import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
 import { Link, useNavigate } from "react-router-dom";
@@ -25,13 +27,6 @@ function ListarProdutos() {
     (state) => state.tokens
   );
   let navigate = useNavigate();
-
-  useEffect(() => {
-    if (token == "") {
-      alert("Você precisa estar logado!");
-      navigate("/login");
-    }
-  }, [token]);
 
   async function getProduto() {
     await busca("/produtos/all", setProdutos, {
@@ -82,31 +77,26 @@ function ListarProdutos() {
                   Adicionar <img src={Cart} alt="" />
                 </Button>
 
+                <Box className="btnOptions" mb={1.5}>
 
-                <Box className="btnCard" mb={1.5}>
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" className="btnAtualizar marginLeft" size="small">
-                      atualizar
-                    </Button>
+                      <img src={Edit} alt="" />
                   </Box>
                 </Link>
+
                 <Link
                   to={`/produtos/deletar/${produto.id_produto}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" className="btnDeletar">
-                      deletar
-                    </Button>
+                    <img src={Delete} alt="" />
                   </Box>
                 </Link>
               </Box>
-
-
               </CardActions>
             </Card>
         ))}

@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { busca } from '../../../../services/Service';
 import { useSelector } from 'react-redux';
 import TokenState from '../../../../store/tokens/tokenReducer';
+import "./MenuDrop.css";
+import { Typography } from '@material-ui/core';
 
 export default function FadeMenu() {
 
@@ -48,13 +50,14 @@ export default function FadeMenu() {
   return (
     <div>
       <Button
+      
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        Categorias
+        <Typography className='btnCategorias'>Categorias</Typography>
       </Button>
       <Menu
         id="fade-menu"

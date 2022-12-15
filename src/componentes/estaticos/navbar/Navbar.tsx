@@ -38,15 +38,17 @@ function Navbar() {
               <div className="menuicon"></div>
             </div>
           </Box>
-
-          <Box className="logo">
+        <Link to='/home'>
+        <Box className="logo">
             <Typography className="text-logo" variant="h5" color="inherit">
               GreenShop
               <div className="barrinha"></div>
             </Typography>
           </Box>
-
+        </Link>
+          
           <Box className="menu-right" display="flex">
+            
             <Box className="pesquisa">
               <FormControl variant="standard" color="success">
                 <Input
