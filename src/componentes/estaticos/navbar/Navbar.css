@@ -6,6 +6,9 @@
     align-items: center;
     padding: 5px !important;
 }
+.text-decoration{
+    color: #333;
+}
 .logo{
     color: #333;
     font-family: sans-serif;

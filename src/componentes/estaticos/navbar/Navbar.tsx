@@ -74,7 +74,7 @@ function Navbar() {
                       Minha Conta
                     </Button>
                     <Menu {...bindMenu(popupState)}>
-                      <MenuItem onClick={popupState.close}>Perfil</MenuItem>
+                      <Link to='/perfil' className="text-decoration"><MenuItem onClick={popupState.close}>Perfil</MenuItem></Link>
                       <MenuItem onClick={popupState.close}>
                         Meus Pedidos
                       </MenuItem>
