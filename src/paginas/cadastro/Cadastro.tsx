@@ -6,6 +6,7 @@ import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   
@@ -50,14 +51,39 @@ function CadastroUsuario() {
     try{
       if (confirmarSenha == user.senha) {
         await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-        alert("Usuario cadastrado com sucesso");
+        toast.success('Usuario Cadastro Com Sucesso!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       } else {
-        alert(
-          "Dados inconsistentes. Favor verificar as informações de cadastro."
-        );
+        toast.warn('Senhas Divergentes!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
   }catch(error){
-      alert('Dados incorretos!')
+    toast.error('Dados Incorretos!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   }
 }
 
@@ -94,6 +120,7 @@ function CadastroUsuario() {
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               variant="outlined"
+              type="password"
               label="Senha"
               name="senha"
               fullWidth
@@ -110,6 +137,7 @@ function CadastroUsuario() {
               variant="outlined"
               label="Confirmar Senha"
               name="confirmarSenha"
+              type="password"
               fullWidth
               margin="normal"
             >

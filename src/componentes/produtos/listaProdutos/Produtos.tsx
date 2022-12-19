@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
-import Mais from "./mais.svg";
+import Mais from "./mais.png";
 import Dots from "./dots.svg";
 import Cart from "./cart.svg";
 import Edit from "./edit.svg";
@@ -41,6 +41,7 @@ function ListarProdutos() {
 
   return (
     <>
+    {/* BOTÃO PARA CADASTRAR PRODUTO */}
       <Link to="/produtos/cadastrar" className="text-decorator-none">
         <Button
           variant="contained"
@@ -50,6 +51,8 @@ function ListarProdutos() {
           <img src={Mais}/>
         </Button>
       </Link>
+
+    {/* CARD PRODUTO */}
       <Box className="container">
         {produtos.map((produto) => (
             <Card className="cardProduto">
@@ -61,15 +64,18 @@ function ListarProdutos() {
                 alt="foto produto"
               />
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography className="cardNome" variant="h5" component="div">
                   {produto.nome}
+                  <strong className="cardPreco">R${produto.valor}</strong>
                 </Typography>
-                <Typography className="cardCategoria">
+
+               {/*  <Typography className="cardCategoria">#{produto.categoria} </Typography> */}
+
+                <Typography className="cardDescricao">
                   {produto.descricao}
-                  <strong className="cardPreco">{produto.valor}</strong>
                 </Typography>
               </CardContent>
-              <CardActions className="socialPerfil">
+              <CardActions className="btnArea">
                 <Button size="small" className="btnComprar">
                   Comprar
                 </Button>
@@ -81,10 +87,10 @@ function ListarProdutos() {
 
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
-                  className="text-decorator-none"
+                  className="text-decorator-none "
                 >
-                  <Box mx={1}>
-                      <img src={Edit} alt="" />
+                  <Box mx={1} className="btnHover">
+                      <img className="btnHover" src={Edit} alt="" />
                   </Box>
                 </Link>
 
@@ -92,8 +98,8 @@ function ListarProdutos() {
                   to={`/produtos/deletar/${produto.id_produto}`}
                   className="text-decorator-none"
                 >
-                  <Box mx={1}>
-                    <img src={Delete} alt="" />
+                  <Box mx={1} className="btnHover">
+                    <img className="btnHover" src={Delete} alt="" />
                   </Box>
                 </Link>
               </Box>

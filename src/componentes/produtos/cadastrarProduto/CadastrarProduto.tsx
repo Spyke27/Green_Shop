@@ -19,6 +19,8 @@ import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
 import Categoria from "../../../model/Categoria";
 import Produtos from "../../../model/Produto";
+import { toast } from "react-toastify";
+import { Http2ServerRequest } from "http2";
 
 function CadastroProduto() {
   let navigate = useNavigate();
@@ -28,13 +30,21 @@ function CadastroProduto() {
     (state) => state.tokens
   );
 
-  /*  useEffect(() => {
+    useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.warn('Você Precisa Estar Logado!', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
             navigate("/login")
-
         }
-    }, [token]) */
+    }, [token])
 
   const [categoria, setCategoria] = useState<Categoria>({
     id_categoria: 0,
@@ -42,6 +52,7 @@ function CadastroProduto() {
     ambiente: "",
     produto: null,
   });
+
   const [produto, setProduto] = useState<Produtos>({
     id_produto: 0,
     nome: "",
@@ -95,21 +106,68 @@ function CadastroProduto() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/produtos/atualizar`, produto, setProduto, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      alert("Produto atualizado com sucesso!");
+
+      try{
+        await put(`/produtos/atualizar`, produto, setProduto, {
+          headers: {
+            Authorization: token,
+          },
+        });
+        back();
+        toast.success('Produto Atualizado!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+          
+      }catch(error){
+        toast.error('Verifique as Informações!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      }
     } else {
-      post(`/produtos/cadastrar`, produto, setProduto, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      alert("Produto cadastrado com sucesso!");
+      try{
+        await post(`/produtos/cadastrar`, produto, setProduto, {
+          headers: {
+            Authorization: token,
+          },
+        });
+        back();
+        toast.success('Produto Cadastrado!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      }catch(error){
+        toast.error('Erro ao Cadastrar!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      }
     }
-    back();
   }
   function back() {
     navigate("/produtos");
@@ -134,7 +192,7 @@ function CadastroProduto() {
                 align="center"
                 className="textos2"
               >
-                Cadastrar Produtos
+                Cadastrar Produto
               </Typography>
 
               <TextField
@@ -161,7 +219,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="descricao"
                 margin="normal"
-                inputProps={{ maxLength: 20 }}
+                inputProps={{ maxLength: 60 }}
                 fullWidth
               />
 

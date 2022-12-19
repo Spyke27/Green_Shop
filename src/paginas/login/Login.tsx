@@ -7,13 +7,14 @@ import "./Login.css";
 import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/action";
+import { toast } from "react-toastify";
 
 function Login() {
 
   
   let navigate = useNavigate();
   const [token, setToken] = useState('');
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [userLogin, setUserLogin] = useState<UserLogin>(
       {
         usuario: '',
@@ -39,8 +40,27 @@ function Login() {
           e.preventDefault();
           try{
               await login(`/auth/logar`, userLogin, setToken)
+              toast.success('Usuario Logado!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
           }catch(error){
-              alert('Usuario não encontrado!');
+            toast.error('Verifique as Informações!', {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
           }
       }
 

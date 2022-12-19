@@ -50,7 +50,6 @@ export default function FadeMenu() {
   return (
     <div>
       <Button
-      
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"

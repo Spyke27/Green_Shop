@@ -12,11 +12,14 @@ import ListarProdutos from './componentes/produtos/listaProdutos/Produtos';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import DeletarProduto from './componentes/produtos/deletarProduto/DeletarProduto';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
     <Provider store = {store}>
+      <ToastContainer />
     <Router>
       <Navbar/>
         <Routes>

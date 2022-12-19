@@ -2,20 +2,15 @@ import React  from "react";
 import './Home.css';
 import { Button, Grid, Typography } from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import Stack from '@mui/material/Stack';
-import FolderIcon from '@mui/icons-material/Folder';
-import PageviewIcon from '@mui/icons-material/Pageview';
-import { green, pink } from '@mui/material/colors';
 import { Box } from '@mui/material';
-import { fontSize, height } from "@mui/system";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { lightGreen } from "@material-ui/core/colors";
 import Carousel from "./slideShow/SlideShow";
 import { countries } from "./slideShow/Data";
+
 const area_externa =  require('./img/area_externa.png');
 const jardim = require('./img/jardim.png');
 const cozinha = require('./img/cozinha.png')
@@ -27,14 +22,10 @@ function Home() {
 
     return (
         <>
-            <Grid container direction='row' justifyContent='center' alignItems='center'>
+            <Grid container direction='row' justifyContent='center' alignItems='center' className="aa">
 
             {<Carousel images={countries} />}
-                <Grid item xs={6}>
-                    
-                </Grid>
                 <Grid xs={12} style={{ backgroundColor: 'white' }}></Grid>
-
             </Grid>
 
 

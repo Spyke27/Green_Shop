@@ -25,6 +25,11 @@ export const buscaId = async (url: any, setDado: any, header: any) => {
     const resposta = await api.get(url, header)
     setDado(resposta.data)
 }
+/* BUSCAR POR NOME */
+export const buscaNome = async (url: any, setDado: any, header: any) => {
+    const resposta = await api.get(url, header)
+    setDado(resposta.data)
+}
 /* CADASTRAR */
 export const post = async (url: any, dados: any, setDado: any, header: any) => {
     const resposta = await api.post(url, dados, header)
