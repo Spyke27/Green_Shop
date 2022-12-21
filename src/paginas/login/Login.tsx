@@ -4,6 +4,7 @@ import React, { ChangeEvent, useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import UserLogin from "../../model/User";
 import "./Login.css";
+import LoginBg from "./loginbg.png";
 import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/action";
@@ -68,7 +69,9 @@ function Login() {
   return (
     <>
       <Grid container justifyContent="center" alignContent="center" className="fullScreen">
-        <Grid sm={6} item className="loginStyle2"></Grid>
+        <Grid sm={6} item className="loginStyle2">
+          <img src={LoginBg} alt="Imagem de Login" />
+        </Grid>
         <Grid sm={6} item className="loginStyle">
           <Typography variant="h3" align="center">Entrar</Typography>
           <form onSubmit={onSubmit}>

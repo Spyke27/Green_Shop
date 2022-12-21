@@ -1,7 +1,14 @@
 .text-decorator-none {
     text-decoration: none;
 }
-
+.loginStyle2{
+    display: flex;
+    justify-content: center;
+}
+.loginStyle2 img{
+    width: auto;
+    height: 420px;
+}
 .fullScreen {
     height: 100vh;
     padding-right: 70px;

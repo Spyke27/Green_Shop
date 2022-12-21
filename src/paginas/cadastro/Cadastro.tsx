@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
 import { toast } from "react-toastify";
+import CadastroBg from "./cadastrobg.png";
 
 function CadastroUsuario() {
   
@@ -164,8 +165,8 @@ function CadastroUsuario() {
             
           </form>
         </Grid>
-        <Grid sm={6} item>
-            
+        <Grid sm={6} item className="cadastroStyle2">
+            <img src={CadastroBg} alt="Imagem de cadastro" />
         </Grid>
       </Grid>
     </>
