@@ -84,7 +84,6 @@ function ListarProdutos() {
                 </Button>
 
                 <Box className="btnOptions" mb={1.5}>
-
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
                   className="text-decorator-none "
@@ -103,6 +102,7 @@ function ListarProdutos() {
                   </Box>
                 </Link>
               </Box>
+              
               </CardActions>
             </Card>
         ))}

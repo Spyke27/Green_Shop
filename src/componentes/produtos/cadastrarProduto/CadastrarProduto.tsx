@@ -205,7 +205,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="nome"
                 margin="normal"
-                inputProps={{ maxLength: 15 }}
+                inputProps={{ maxLength: 16 }}
                 fullWidth
               />
 
