@@ -4,8 +4,8 @@ import React from "react";
 import "./SobreNos.css";
 
 import FotoPerfil from "./perfil.jpg";
-import Linkedin from "./linkedin.jpg";
-import Github from "./github.jpg";
+import Linkedin1 from "./img/linkedin-card.svg";
+import Github1 from "./img/github-card.svg";
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -45,7 +45,7 @@ function SobreNos() {
         <Typography variant="h4" className="textDesenvolvedores ">equipe desenvolvedora</Typography>
     </Box>
 
-    <Box className="boxPerfil">
+    <Box className="boxPerfil3">
 
     <Card sx={{ maxWidth: 345 }} className="card2">
       <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
@@ -64,5 +64,4 @@ function SobreNos() {
     </>
   );
 }
-
 export default SobreNos;
