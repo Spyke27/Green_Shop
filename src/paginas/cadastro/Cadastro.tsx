@@ -88,7 +88,6 @@ function CadastroUsuario() {
   }
 }
 
-
   return (
     <>
      <Grid container direction="row" justifyContent="center" alignContent="center" className="containerCadastro">
@@ -149,11 +148,9 @@ function CadastroUsuario() {
               <Button variant="outlined" className="btnCancelar">
                   Cancelar
               </Button>
-              <Link to="/login" className="text-decorator-none">
               <Button type="submit" variant="contained" className="btn-cadastrar">
                 Cadastrar
               </Button>
-              </Link>
               <div className="ou"><span className="tracinho"></span>OU<span className="tracinho"></span></div>
           <Box className="flex">
             <Typography>Já tem cadastro?</Typography>
