@@ -1,9 +1,7 @@
-import { Box, TextField, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import React from "react";
 import "./Perfil.css";
-import FotoPerfil from "./perfil.svg"
-import { busca } from "../../services/Service";
-import TokenState from "../../store/tokens/tokenReducer";
+import FotoPerfil from "./img/perfil.svg"
 
 function Perfil(){
 

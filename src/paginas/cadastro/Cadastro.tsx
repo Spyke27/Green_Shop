@@ -1,19 +1,19 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import UserCadastro from "../../model/UserCadastro";
-import { cadastroUsuario } from "../../services/Service";
+import { cadastroUsuario } from "../../service/Service";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./Cadastro.css";
+import "./cadastro.css";
 import { toast } from "react-toastify";
-import CadastroBg from "./cadastrobg.png";
+import CadastroBg from "./img/cadastrobg.png";
+import User from "../../model/User";
 
 function CadastroUsuario() {
   
   let navigate = useNavigate();
   const [confirmarSenha, setConfirmarSenha] = useState<String>("");
-  const [user, setUser] = useState<UserCadastro>({
+  const [user, setUser] = useState<User>({
     id_usuario: 0,
     usuario: "",
     nome: "",
@@ -21,7 +21,7 @@ function CadastroUsuario() {
     foto: "",
   });
 
-  const [userResult, setUserResult] = useState<UserCadastro>({
+  const [userResult, setUserResult] = useState<User>({
     id_usuario: 0,
     usuario: "",
     nome: "",
@@ -87,6 +87,7 @@ function CadastroUsuario() {
       });
   }
 }
+
 
   return (
     <>

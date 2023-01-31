@@ -12,7 +12,7 @@ function Carousel({ images }) {
       autoPlay &&
       setTimeout(() => {
         slideRight();
-      }, 10000);
+      }, 5000);
   });
 
   const slideRight = () => {
@@ -37,6 +37,7 @@ function Carousel({ images }) {
       <div className="carousel_wrapper">
         {images.map((image, index) => {
           return (
+            /* (condition) ? true : false */
 
             <div
               key={index}

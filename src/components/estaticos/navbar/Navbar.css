@@ -1,0 +1,420 @@
+.bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+
+/* MenuBarrinha inicio */
+.MenuBarrinha {
+    visibility: hidden;
+}
+
+/* MenuBarrinha Fim */
+
+/* logo GreenShop inicio*/
+
+.text-logo {
+    font-size: 40px !important;
+    margin-left: 500px !important;
+}
+.barrinha {
+    margin-top: -5px;
+}
+
+/* logo GreenShop fim*/
+
+/* barra de pesquisa inicio */
+.menu-right {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.pesquisa {
+    background-color: #e3e3e3;
+    height: auto;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: #00A470 solid .5px;
+    margin-left: 400px;
+}
+
+.lupa {
+    margin-left: 8px;
+}
+
+/* barra de pesquisa inicio */
+
+/* button minha conta */
+.perfil {
+    background-color: #00A470 !important;
+    white-space: nowrap;
+    margin-right: 10px !important;
+    /* obs: para evitar quebra de linha do texto */
+}
+.conta2{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+/* button minha conta */
+
+/* sacola carrinho inicio */
+
+.sacolaa {
+    display: flex;
+}
+
+.sacola {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 0px;
+}
+
+.sacola img {
+    margin-top: -3px;
+    width: 29px;
+    height: 29px;
+}
+
+.qtd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F103;
+    color: #222;
+    margin-left: -10px;
+    height: 15px;
+    margin-top: -17px;
+}
+
+/* sacola carrinho fim */
+
+/* subMenu inicio */
+.bar2 {
+    background-color: #00A470;
+
+    min-height: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar2 a {
+    text-transform: uppercase;
+    color: #e3e3e3 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    margin-right: 20px;
+    border-bottom: 2px solid #00A470;
+}
+
+.bar2 a:hover {
+    color: #fff !important;
+    border-bottom: 2px solid #fff;
+}
+
+.list {
+    list-style-type: none;
+    background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.items {
+    margin-right: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* subMenu fim */
+
+
+
+/* //////////////////////////// 2 none ////////////////////////////*/
+
+.search-box {
+    display: none;
+    visibility: hidden;
+}
+
+.Perfil {
+    display: none;
+}
+
+/* ////////////////////////////////////////////////////////////// */
+
+.LogoEffect {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.LogoEffect:hover {
+    color: white;
+    background: #00a470;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00A470, 0 0 40px #00A470, 0 0 80px #00A470;
+    transition-delay: 1s;
+}
+
+.LogoEffect span {
+    position: absolute;
+    display: block;
+}
+
+.LogoEffect span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+.LogoEffect span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.LogoEffect span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.LogoEffect span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+.barrinha {
+    position: relative;
+    color: #00A470;
+}
+
+.Shop {
+    position: relative;
+    color: rgba(17, 17, 17, 0.651);
+}
+
+.barrinha {
+    content: attr(data-text);
+    position: absolute;
+    color: green;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animarBarrinha 5s linear infinite;
+}
+
+.Shop::before {
+    content: attr(data-text);
+    position: absolute;
+    color: green;
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animarElemento 5s linear infinite;
+}
+
+.Shop:hover::before {
+    color: #e3e3e3;
+}
+
+.btn-link {
+    color: inherit;
+}
+@keyframes animarElemento {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 55%;
+    }
+}
+
+@keyframes animarBarrinha {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 70%;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+@media (max-width: 1600px){
+    .text-logo {
+        margin-left: 40px !important;
+    }
+    .pesquisa {
+        margin-left: 600px;
+    }
+}
+
+@media (max-width: 1400px){
+    .text-logo {
+        margin-left: 40px !important;
+    }
+    .pesquisa {
+        margin-left: 300px;
+    }
+}
+@media (max-width: 1000px){
+    .text-logo {
+        margin-left: 40px !important;
+    }
+    .pesquisa {
+        margin-left: 100px;
+    }
+}
+
+@media (width: 921px) {
+    .MenuBarrinha {
+        visibility: visible;
+    }
+
+    .search-box {
+        display: none !important;
+    }
+}
+
+@media (max-width: 920px) {
+    .MenuBarrinha {
+        visibility: visible;
+    }
+
+    /*  */
+    .bar2 {
+        display: none !important;
+    }
+
+    /*  */
+    .perfil {
+        width: -10px !important;
+        height: 30px;
+        /* obs: para evitar quebra de linha do texto */
+    }
+    .conta{
+        display: none;
+    }
+    .conta2{
+        visibility: visible;
+        width: 25px !important;
+        height: 5px !important;
+        margin-top: -23px;
+        margin-left: 0px;
+    }
+    /*  */
+  
+
+    /* pesquisa inicio */
+    .pesquisa {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* pesquisa fim */
+
+    /* perfil inicio */
+
+    /* perfil fim */
+
+}
+
+@media (max-width: 400px) {
+
+    /*  */
+    .LogoEffect{
+        font-size: 20px !important;
+        margin-left: -22px !important;
+    }
+    /*  */
+    .pesquisa {
+        display: none;
+        visibility: hidden;
+    }
+
+    /*  */
+    .conta2{
+        width: 25px !important;
+        height: 5px !important;
+        margin-top: -23px;
+        margin-left: 0px;
+    }
+    /*  */
+    .sacola {
+        margin-left: -10px;
+        margin-top: 8px;
+        padding-top: 0px;
+    }
+
+    .sacola img {
+        width: 23px;
+        height: 23px;
+    }
+
+    .qtd {
+        margin-left: -10px;
+        height: 15px;
+        margin-top: -15px;
+    }
+}

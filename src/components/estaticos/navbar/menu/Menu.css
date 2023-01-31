@@ -1,0 +1,163 @@
+.menu .menu-faketrigger {
+    position: absolute;
+    z-index: 1000;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    /* para deixar a checkbox invisivel e aparecer a barrinha com os três botões */
+}
+
+.menu .menu-faketrigger:checked~ul {
+    /* background-color: transparent; */
+}
+
+.menu .menu-faketrigger:checked~.menu-lines span {
+    background-color: yellow;
+}
+
+.menu .menu-faketrigger:checked~.menu-lines span:nth-child(1) {
+    transform-origin: 0% 0%;
+    transform: rotate(45deg) scaleX(1.25);
+}
+
+.menu .menu-faketrigger:checked~.menu-lines span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu .menu-faketrigger:checked~.menu-lines span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scaleX(1.25);
+}
+
+.menu .menu-lines {
+    position: absolute;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    margin-top: -20px;
+}
+
+input {
+    margin-top: -20px;
+    margin-left: 0px;
+}
+
+.menu .menu-lines span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-radius: 3px;
+    transition: all ease .2s;
+}
+
+.menu ul {
+    list-style: none;
+    position: absolute;
+    z-index: 998;
+    left: 0;
+    height: calc(100vh - 100px);
+    width: 100%;
+    padding-top: 100px;
+    background-color: #00a470;
+    margin-left: -115%;
+    transition: all ease .2s;
+    margin-top: 44px;
+}
+
+.menu .menu-faketrigger:checked~ul {
+    margin-left: 0;
+}
+
+.menu ul li {
+    padding: 10px 30px;
+    justify-content: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    transition: all ease .3s;
+}
+
+.menu ul li a:hover {
+    color: yellow;
+}
+
+.menu {
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+}
+
+b {
+    padding: 10px;
+    display: flex;
+    margin-left: -50px;
+}
+b:hover {
+    color: yellow !important;
+}
+
+/*  */
+
+@media (max-width: 400px) {
+    .menu .menu-faketrigger {
+        position: absolute;
+        z-index: 1000;
+        width: 30px;
+        height: 30px;
+        top: 45px;
+        left: 10px;
+        opacity: 0;
+        /* para deixar a checkbox invisivel e aparecer a barrinha com os três botões */
+    }
+
+    .menu .menu-lines {
+        margin-top: -14px;
+    }
+
+    .menu .menu-lines span {
+        width: 20px;
+        height: 5px;
+        margin-bottom: 5px;
+        margin-left: -10px;
+    }
+
+    .menu .menu-faketrigger:checked~.menu-lines span {
+        background-color: yellow;
+    }
+
+    .menu .menu-faketrigger:checked~.menu-lines span:nth-child(1) {
+        transform-origin: 0% 0%;
+        transform: rotate(54deg) scaleX(1.35);
+    }
+
+    .menu .menu-faketrigger:checked~.menu-lines span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu .menu-faketrigger:checked~.menu-lines span:nth-child(3) {
+        transform-origin: 0% 100%;
+        transform: rotate(-54deg) scaleX(1.35);
+    }
+
+    .menu ul {
+        margin-top: 30px;
+    }
+
+    li, b {
+        margin-left: -35px !important;
+    }
+
+    /*  */
+
+
+
+}
