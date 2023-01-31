@@ -1,5 +1,7 @@
 <h1 align="center">GreenShop</h1>
 
+Projeto construido no bootcamp da Generation como projetor integrador em equipe.
+
 ## 🚀 Principais Tecnologias Usadas 
 <ul>
     <li>NestJS</li>
@@ -12,7 +14,7 @@
 
 ## Projeto
 
-- Ecommerce defendendo a ODS 11, com o proposito de promover a estimulação do consumo sustentável. Neste projeto eu fui capaz de desenvolver tudo o que aprendi até então, desde construção de API até o consumo da mesma pela aplicação no front.
+- Ecommerce defendendo a ODS 11, com o proposito de promover a estimulação do consumo sustentável. Neste projeto eu fui capaz de desenvolver com meus companheiros tudo o que aprendi até então, desde construção de API até o consumo da mesma pela aplicação no front.
 
  ## Projeto rodando:
  
