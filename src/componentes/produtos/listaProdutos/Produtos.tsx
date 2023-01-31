@@ -26,6 +26,7 @@ function ListarProdutos() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
+
   let navigate = useNavigate();
 
   async function getProduto() {
